@@ -18,6 +18,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+    @Transactional
     public MemberRegisterResponseDTO registerMember(MemberRegisterRequestDTO req) {
         if (memberRepository.findByUsername(req.username()).isPresent()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "이미 존재하는 아이디입니다.");

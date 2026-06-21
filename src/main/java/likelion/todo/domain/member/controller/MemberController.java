@@ -1,5 +1,6 @@
 package likelion.todo.domain.member.controller;
 
+import likelion.todo.domain.member.dto.MemberLoginResponseDTO;
 import likelion.todo.domain.member.dto.MemberRegisterRequestDTO;
 import likelion.todo.domain.member.dto.MemberRegisterResponseDTO;
 import likelion.todo.domain.member.service.MemberService;
@@ -20,5 +21,10 @@ public class MemberController {
     @PostMapping("/register")
     public ResponseEntity<MemberRegisterResponseDTO> register(@RequestBody MemberRegisterRequestDTO req) {
         return ResponseEntity.ok(memberService.registerMember(req));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<MemberLoginResponseDTO> login(@RequestBody MemberRegisterRequestDTO req) {
+        return ResponseEntity.ok(memberService.login(req));
     }
 }

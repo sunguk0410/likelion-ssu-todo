@@ -43,4 +43,17 @@ public class Todo extends BaseEntity {
         this.emoji = emoji;
         this.member = member;
     }
+
+    public void updateTodoPatch(LocalDateTime date, String content) {
+        this.date = date;
+        this.content = content;
+    }
+
+    public void updateEmoji(String emoji) {
+        this.emoji = emoji;
+    }
+
+    public void toggleChecked() {
+        this.isChecked = !this.isChecked;
+    }
 }
